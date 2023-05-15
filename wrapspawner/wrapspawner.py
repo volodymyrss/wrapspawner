@@ -236,7 +236,7 @@ class ProfilesSpawner(WrapSpawner):
         self.child_profile = self.user_options.get('profile', "")
         self.select_profile(self.child_profile)
 
-        if s:=self.child_config.get('child_spawner', None) is not None:
+        if (s:=self.child_config.get('child_spawner', None)) is not None:
             print(f"\033[31musing ready child spawner from config: {s}\033[0m")
             self.child_spawner = s
             
